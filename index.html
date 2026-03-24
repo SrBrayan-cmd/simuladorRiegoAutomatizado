@@ -8,18 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>� Simulación - Sistema de Riego Inteligente</h1>
+        <h1>Simulación - Sistema de Riego Inteligente</h1>
 
         <!-- Ficha Técnica -->
         <div class="section technical">
-            <h2>Ficha Técnica</h2>
+            <h2>Notas</h2>
             <ul>
-                <li><strong>Título:</strong> Simulación - Sistema de Riego Inteligente</li>
-                <li><strong>Autor(es):</strong> Luz Fanny Murillo (Programadora), Haider García (Usuario/Interesado)</li>
-                <li><strong>Año:</strong> 2016 (referencia bibliográfica)</li>
-                <li><strong>Institución:</strong> Facultad TIC - Ingeniería de Sistemas</li>
-                <li><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript (simulación que puede extenderse a PHP/MySQL/Apache)</li>
-                <li><strong>Lógica:</strong> Lógica difusa (simulada) - sensores de humedad, temperatura, lluvia</li>
+                <li><strong>Nota:</strong> Toda esta visualizacion es por el momento una prueba de concepto, sufrira grandes cambios a futuro</li>
             </ul>
         </div>
 
@@ -49,13 +44,6 @@
                     </div>
                     <p class="value" id="temperatureValue">25°C</p>
                 </div>
-                <div class="metric">
-                    <h3>Lluvia</h3>
-                    <div class="meter">
-                        <div class="meter-fill rain" id="rainMeter" style="width: 30%"></div>
-                    </div>
-                    <p class="value" id="rainValue">30%</p>
-                </div>
             </div>
         </div>
 
@@ -73,11 +61,6 @@
                     <input type="range" id="temperatureSlider" min="0" max="50" value="25">
                     <span id="temperatureLabel">25°C</span>
                 </div>
-                <div class="control-group">
-                    <label for="rainSlider">Lluvia</label>
-                    <input type="range" id="rainSlider" min="0" max="100" value="30">
-                    <span id="rainLabel">30%</span>
-                </div>
             </div>
         </div>
 
@@ -88,22 +71,13 @@
                 <div class="status-item">
                     <span>Estado del Riego:</span>
                     <div class="status-indicator" id="irrigationStatus">
-                        <span class="icon">⚪</span>
                         <span id="irrigationStatusText">Apagado</span>
                     </div>
                 </div>
                 <div class="status-item">
                     <span>Nivel de Humedad:</span>
                     <div class="status-indicator" id="humidityStatus">
-                        <span class="icon">📊</span>
                         <span id="humidityStatusText">Normal</span>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <span>Condición de Lluvia:</span>
-                    <div class="status-indicator" id="rainStatus">
-                        <span class="icon">☔</span>
-                        <span id="rainStatusText">Moderada</span>
                     </div>
                 </div>
             </div>
@@ -112,23 +86,26 @@
         <!-- Sección de Configuración -->
         <div class="section settings">
             <h2>Configuración</h2>
-            <div class="settings-grid">
+            
+            <!-- Nuevo contenedor para los umbrales contiguos -->
+            <div class="thresholds-group">
                 <div class="setting-item">
                     <label for="humidityThreshold">Umbral Humedad Mínima</label>
                     <input type="number" id="humidityThreshold" min="0" max="100" value="30">
-                    <span>%</span>
                 </div>
+
                 <div class="setting-item">
                     <label for="humidityTarget">Humedad Objetivo</label>
                     <input type="number" id="humidityTarget" min="0" max="100" value="70">
-                    <span>%</span>
-                </div>
-                <div class="setting-item">
-                    <label for="riegoIntensity">Intensidad Riego</label>
-                    <input type="range" id="riegoIntensity" min="1" max="10" value="5">
-                    <span id="intensityValue">5</span>
                 </div>
             </div>
+
+            <div class="setting-item">
+                <label for="riegoIntensity">Intensidad Riego</label>
+                <input type="range" id="riegoIntensity" min="1" max="10" value="5">
+                <span id="intensityValue">5</span>
+            </div>
+            
             <button id="resetButton" class="reset-btn">Reiniciar Simulador</button>
         </div>
 
@@ -145,9 +122,8 @@
 
         <!-- Sección de Información -->
         <div class="section info">
-            <h2>💡 Información del Modelo</h2>
+            <h2>Información del Modelo</h2>
             <p>Modo online simulado: todos los valores se basan en generadores pseudoaleatorios para representar datos de un web service como Yahoo Weather.</p>
-            <p>La lógica de control se basa en umbrales y estado de lluvia, lo cual se puede extender a lógica difusa real.</p>
         </div>
     </div>
 
